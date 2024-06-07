@@ -7,6 +7,7 @@ This is a simple budget application project developed using HTML, CSS, and JavaS
 ## Table of Contents
 
 - [Features](#features)
+- [Demo](#demo)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
@@ -20,14 +21,16 @@ This is a simple budget application project developed using HTML, CSS, and JavaS
 - **Local data storage**: User data is stored locally using browser's local storage.
 - **Responsive design**: Optimized for both mobile and desktop users.
 
+## Demo
 
+Check out the live demo [here](https://abdullahalsady.github.io/Budget-Application/index.html).
 
 ## Installation
 
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/abdullahalsady/Budget-Application.git
+    git clone https://github.com/yourusername/budget-application.git
     ```
 
 2. **Open the application:**
@@ -62,10 +65,8 @@ This project is contributed by the following individuals:
 
 Contributions are welcome! Please feel free to fork the repository and submit pull requests to contribute to this project.
 
-
-
 ## Contact
 
 For any inquiries or issues, please contact:
-   
-:email: [dev.sady@gmail.com](mailto:dev.sady@gmail.com)
+
+:mailbox_with_no_mail: [dev.sady@gmail.com](mailto:dev.sady@gmail.com)
