@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-in</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #111;
+            width: 100%;
+            overflow: hidden;
+        }
+        /* Styles for the ring effect */
+        .ring {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .ring i {
+            position: absolute;
+            inset: 0;
+            border: 2px solid #fff;
+            transition: 0.5s;
+        }
+        .ring i:nth-child(1) {
+            border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+            animation: animate 6s linear infinite;
+        }
+        .ring i:nth-child(2) {
+            border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+            animation: animate 4s linear infinite;
+        }
+        .ring i:nth-child(3) {
+            border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+            animation: animate2 10s linear infinite;
+        }
+        .ring:hover i {
+            border: 6px solid var(--clr);
+            filter: drop-shadow(0 0 20px var(--clr));
+        }
+        @keyframes animate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        @keyframes animate2 {
+            0% {
+                transform: rotate(360deg);
+            }
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+        /* Styles for the login form */
+        .login {
+            position: absolute;
+            width: 300px;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .login h2 {
+            font-size: 2em;
+            color: #fff;
+        }
+        .login .inputBx {
+            position: relative;
+            width: 100%;
+        }
+        .login .inputBx input {
+            position: relative;
+            width: 100%;
+            margin-bottom: 1rem;
+            padding: 12px 20px;
+            background: transparent;
+            border: 2px solid #fff;
+            border-radius: 40px;
+            font-size: 1.2em;
+            color: #fff;
+            box-shadow: none;
+            outline: none;
+        }
+        .login .inputBx input[type="submit"] {
+            width: 100%;
+            background: #0078ff;
+            background: linear-gradient(45deg, #a587ff,#ff99c9);
+            border: none;
+            cursor: pointer;
+        }
+        .login .inputBx input::placeholder {
+            color: rgba(255, 255, 255, 0.75);
+        }
+        .login .links {
+            position: relative;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+        .login .links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: .8rem;
+        }
+        /* Styles for links */
+        a.sign {
+            color: #0078ff !important;
+            text-decoration: underline #0078ff !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Ring div starts here -->
+    <div class="ring">
+        <i style="--clr:#a587ff;"></i> 
+        <i style="--clr:#ff99c9;"></i> 
+        <i style="--clr:#c8f25a;"></i> 
+
+        <div class="login">
+            <!-- Title for sign in -->
+            <h2>SIGN IN</h2>
+            <!-- Sign in form -->
+            <form id="loginForm">
+                <div class="inputBx">
+                    <input type="text" id="username" placeholder="Username"> <!-- Added ID -->
+                </div>
+                <div class="inputBx">
+                    <input type="password" id="password" placeholder="Password"> <!-- Added ID -->
+                </div>
+                <div class="inputBx">
+                    <input type="submit" value="Sign in">
+                </div>
+            </form>
+            <!-- End of sign in form -->
+
+            <!-- Links for forget password and sign up -->
+            <div class="links">
+                <a href="#">Forget Password</a>
+                <a class="sign" href="sign-up.html">Sign up</a>
+            </div>
+        </div>
+    </div>
+    <!-- Ring div ends here -->
+
+    <!-- JavaScript code -->
+    <script>
+        // Function to retrieve signup data from local storage
+        function getSignupData() {
+            var signupData = localStorage.getItem('signupData');
+            return signupData ? JSON.parse(signupData) : [];
+        }
+
+        // Function to check user credentials
+        function checkUserData(username, password) {
+            var signupData = getSignupData();
+            if (signupData) {
+                for (var i = 0; i < signupData.length; i++) {
+                    if (signupData[i].username === username && signupData[i].password === password) {
+                        localStorage.setItem('loggedIn', 'true');
+                        window.location.href = 'index.html';
+                        return;
+                    }
+                }
+            }
+            // Alert for invalid username or password
+            alert('Invalid username or password!');
+        }
+
+        // Function to handle form submission
+        function handleFormSubmission(event) {
+            event.preventDefault();
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            checkUserData(username, password);
+        }
+
+        // Event listener for form submission
+        document.getElementById('loginForm').addEventListener('submit', handleFormSubmission);
+    </script>
+</body>
+</html>
