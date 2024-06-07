@@ -30,7 +30,7 @@ Check out the live demo [here](https://abdullahalsady.github.io/Budget-Applicati
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/yourusername/budget-application.git
+    git clone https://github.com/abdullahalsady/Budget-Application.git
     ```
 
 2. **Open the application:**
