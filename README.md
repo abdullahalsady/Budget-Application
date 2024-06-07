@@ -70,5 +70,4 @@ Contributions are welcome! Please feel free to fork the repository and submit pu
 ## Contact
 
 For any inquiries or issues, please contact:
-
-:mailbox_with_no_mail: mailto:dev.sady@gmail.com
+:email: [dev.sady@gmail.com](mailto:dev.sady@gmail.com)
