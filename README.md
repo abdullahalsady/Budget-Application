@@ -7,12 +7,9 @@ This is a simple budget application project developed using HTML, CSS, and JavaS
 ## Table of Contents
 
 - [Features](#features)
-- [Demo](#demo)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
-- [Acknowledgements](#acknowledgements)
 - [Contact](#contact)
 
 ## Features
@@ -30,7 +27,7 @@ This is a simple budget application project developed using HTML, CSS, and JavaS
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/yourusername/budget-application.git
+    git clone https://github.com/abdullahalsady/Budget-Application.git
     ```
 
 2. **Open the application:**
