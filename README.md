@@ -71,4 +71,4 @@ Contributions are welcome! Please feel free to fork the repository and submit pu
 
 For any inquiries or issues, please contact:
 
-:mailbox_with_no_mail: dev.sady@gmail.com
+:mailbox_with_no_mail: mailto:dev.sady@gmail.com
